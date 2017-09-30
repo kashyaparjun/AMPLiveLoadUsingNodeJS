@@ -1,0 +1,30 @@
+<html>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title><%= title %></title>
+  <link rel="canonical" href="http://localhost:3000/" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+  <style>
+
+  </style>
+  <body>
+    <h2>welcome <%= user%></h2>
+    <amp-live-list id="my-live-list" data-poll-interval="15000" data-max-items-per-page="20">
+      <button update on="tap:my-live-list.update">You have updates!</button>
+      <div items>
+        <% videos.forEach((video) => { %>
+          <div class="post" id="<%= video.id %>" data-sort-time="<%= video.timestamp %>">
+            <amp-youtube
+              width="480"
+              height="270"
+              layout="responsive"
+              data-videoid="<%= video.YoutubeID %>"
+            />
+          </div>
+        <% }) %>
+      </div>
+    </amp-live-list>
+  </body>
+</html>
