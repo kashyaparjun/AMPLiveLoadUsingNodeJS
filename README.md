@@ -14,7 +14,7 @@ Use intructions:
 1. Open http://localhost:3000/ on your browser
 2. Using postman or any other posting mechanism, <b>post</b> to the same above url with JSON format:
       {
-	      "YoutubeID": ~here put the youtube ID of the Youtube Video~
+	      "YoutubeID": ~insert here the youtube ID of the Youtube Video~
       }
       
       If this is the url:
